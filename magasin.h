@@ -11,4 +11,8 @@ class Magasin{
     public:
         Magasin();
         void AfficherInfo() const;
+        void Ajouterproduct(const Product& product);
+        void AfficherProductALL() const;
+        void AfficherProductNom(const std::string& nom);
+        void MettreaJourqtite(const std::string& nom, int nouvellequantite);
 };
