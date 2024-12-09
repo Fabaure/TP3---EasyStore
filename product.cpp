@@ -27,7 +27,7 @@ std::ostream &operator<<(std::ostream &os, const Product &product)
 {
     os << "Titre du produit : " << product.Get_titre() << "\n"
        << "Description du produit : " << product.Get_description() << "\n"
-       << "Quantité disponible : " << product.Get_quantite_dispo() << "\n"
+       << "Quantite disponible : " << product.Get_quantite_dispo() << "\n"
        << "Prix du produit : " << product.Get_prix_unitaire() << "\n";
     return os;
 }
