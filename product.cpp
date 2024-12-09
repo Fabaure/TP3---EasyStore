@@ -23,6 +23,11 @@ float Product::Get_prix_unitaire() const
     return prix_unit_;
 }
 
+void Product::setquantite(int nouvellequantite)
+{
+    q_dispo_ = nouvellequantite;
+}
+
 std::ostream &operator<<(std::ostream &os, const Product &product)
 {
     os << "Titre du produit : " << product.Get_titre() << "\n"

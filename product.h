@@ -13,5 +13,6 @@ class Product{
         std::string Get_description() const;
         int Get_quantite_dispo() const;
         float Get_prix_unitaire() const;
+        void setquantite(int nouvellequantite);
         friend std::ostream& operator<<(std::ostream& os, const Product& product);
 };
