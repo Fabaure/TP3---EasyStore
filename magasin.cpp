@@ -27,8 +27,18 @@ void Magasin::AfficherProductALL() const
 
 void Magasin::AfficherProductNom(const std::string &nom)
 {
+    for(const auto& product : _products){
+        if(product.Get_titre() == nom){
+            std::cout << product;
+        }
+    }
 }
 
 void Magasin::MettreaJourqtite(const std::string &nom, int nouvellequantite)
 {
+    for(auto& product : _products){
+        if(product.Get_titre() == nom){
+            product.setquantite(nouvellequantite);
+        }
+    }
 }
