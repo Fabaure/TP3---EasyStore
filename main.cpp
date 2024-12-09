@@ -13,5 +13,6 @@ int main(){
     EasyStore.AfficherProductNom("Eau");
     EasyStore.MettreaJourqtite("Eau", 50);
     EasyStore.AfficherProductNom("Eau");
+    EasyStore.AfficherInfo();
     return 0;
 }
