@@ -25,11 +25,13 @@ void Client::ModifierQtePanier(const std::string &nom, int nouvellequantite)
 
 void Client::SuppProduitPanier(const std::string &nom)
 {
+/*
     for(auto& product : panierAchat_){
         if(product.Get_titre() == nom){
             panierAchat_.erase();
         }
     }
+*/
 }
 
 std::ostream &operator<<(std::ostream &os, const Client &client)

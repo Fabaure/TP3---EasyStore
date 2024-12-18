@@ -1,6 +1,5 @@
 #include <vector>
 #include "client.h"
-#include "product.h"
 #include "Order.h"
 
 class Magasin{
