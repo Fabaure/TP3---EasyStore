@@ -45,12 +45,24 @@ void Client::ViderPanier()
     panierAchat_.clear();
 }
 
-void Client::ModifierQtePanier(const std::string &nom, int nouvellequantite)
+void Client::ModifierQtePanier(Magasin& magasin, const std::string &nom, int nouvellequantite)
 {
     for(auto& pa : panierAchat_){
         if(pa.nom == nom){
-            pa.quantite = nouvellequantite;
-            std::cout << "Quantite mise à jour pour " << nom << " : " << nouvellequantite << std::endl;
+            for(auto& product : magasin.GetProduct())
+             if(product.Get_titre() == nom){
+                int qte_init = pa.quantite+product.Get_quantite_dispo();
+                if (qte_init >= nouvellequantite){
+                    pa.quantite = nouvellequantite;
+                    product.setquantite(qte_init-nouvellequantite);
+                }
+                else{
+                    std::cout << "Quantite impossible" << std::endl;
+                    return;
+                }
+             }
+            std::cout << "Quantite mise a jour pour " << nom << " : " << nouvellequantite << std::endl;
+            return;
         }
     }
     std::cout << "Produit non trouve dans le panier : " << nom << std::endl;
@@ -73,9 +85,14 @@ std::ostream &operator<<(std::ostream &os, const Client& client)
        << "Prenom : " << client.get_prenom() << "\n"
        << "Nom : " << client.get_nom() << "\n"
        << "---- Panier d'achat ----" << "\n";
-       for(auto& pa : client.panierAchat_){
-        os << "Nom du produit : " << pa.nom << "\n"
-           << "Quantite(s) : " << pa.quantite << "\n";
+       if(client.panierAchat_.size() == 0){
+        os << "- le panier d'achat est vide -";
+       }
+       else{
+            for(auto& pa : client.panierAchat_){
+                os << "Nom du produit : " << pa.nom << "\n"
+                   << "Quantite(s) : " << pa.quantite << "\n";
+            };
        };
     return os;
 }

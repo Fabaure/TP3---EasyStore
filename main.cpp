@@ -16,6 +16,13 @@ int main(){
     EasyStore.AfficherInfo();
     Client Aurelien(152, "Aurelien", "LITRA", {});
     Aurelien.AjouterProduitPanier(EasyStore, "Eau", 5);
+    Aurelien.AjouterProduitPanier(EasyStore, "Lait", 1);
+    Aurelien.AjouterProduitPanier(EasyStore, "Chocolat", 5);
+    EasyStore.AfficherProductNom("Eau");
+    EasyStore.AfficherProductNom("Lait");
+    EasyStore.AfficherProductNom("Chocolat");
+    std::cout << Aurelien;
+    Aurelien.ModifierQtePanier(EasyStore, "Eau",50);
     EasyStore.AfficherProductNom("Eau");
     std::cout << Aurelien;
     return 0;

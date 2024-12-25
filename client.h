@@ -29,7 +29,7 @@ class Client{
         void setquantite(int nouvellequantite);
         void AjouterProduitPanier(Magasin &magasin, const std::string& nom, int quantite);
         void ViderPanier();
-        void ModifierQtePanier(const std::string &nom, int nouvellequantite);
+        void ModifierQtePanier(Magasin &magasin, const std::string &nom, int nouvellequantite);
         void SuppProduitPanier(const std::string &nom);
         friend std::ostream& operator<<(std::ostream& os, const Client& client);
 };
