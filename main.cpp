@@ -14,5 +14,9 @@ int main(){
     EasyStore.MettreaJourqtite("Eau", 50);
     EasyStore.AfficherProductNom("Eau");
     EasyStore.AfficherInfo();
+    Client Aurelien(152, "Aurelien", "LITRA", {});
+    Aurelien.AjouterProduitPanier(EasyStore, "Eau", 5);
+    EasyStore.AfficherProductNom("Eau");
+    std::cout << Aurelien;
     return 0;
 }
