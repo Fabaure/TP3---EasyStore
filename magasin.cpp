@@ -3,6 +3,11 @@
 
 Magasin::Magasin() : _products(), _clients(), _orders() {}
 
+std::vector<Product>& Magasin::GetProduct()
+{
+    return _products;
+}
+
 void Magasin::AfficherInfo() const
 {
     std::cout << "Le nombre de produits :" << _products.size() << std::endl;

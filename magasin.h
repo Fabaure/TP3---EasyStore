@@ -9,6 +9,7 @@ class Magasin{
         std::vector<Order> _orders;
     public:
         Magasin();
+        std::vector<Product>& GetProduct();
         void AfficherInfo() const;
         void Ajouterproduct(const Product& product);
         void AfficherProductALL() const;
