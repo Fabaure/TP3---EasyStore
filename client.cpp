@@ -68,16 +68,22 @@ void Client::ModifierQtePanier(Magasin& magasin, const std::string &nom, int nou
     std::cout << "Produit non trouve dans le panier : " << nom << std::endl;
 }
 
-void Client::SuppProduitPanier(const std::string &nom)
-{
-/*
-    for(auto& product : panierAchat_){
-        if(product.Get_titre() == nom){
-            panierAchat_.erase();
+void Client::SuppProduitPanier(Magasin& magasin, const std::string &nom){
+    for (int i = 0; i < panierAchat_.size(); ++i) {
+        if (panierAchat_[i].nom == nom) {
+            for(auto& product : magasin.GetProduct()){
+                if(product.Get_titre()==nom){
+                    product.setquantite(panierAchat_[i].quantite+product.Get_quantite_dispo());
+                }
+            }
+            panierAchat_.erase(panierAchat_.begin() + i); 
+            std::cout << "Produit supprime du panier : " << nom << std::endl;
+            return;
         }
     }
-*/
+    std::cout << "Produit non trouve dans le panier : " << nom << std::endl;
 }
+
 
 std::ostream &operator<<(std::ostream &os, const Client& client)
 {

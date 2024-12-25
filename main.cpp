@@ -11,7 +11,7 @@ int main(){
     EasyStore.AfficherProductALL();
     EasyStore.AfficherProductNom("Chocolat");
     EasyStore.AfficherProductNom("Eau");
-    EasyStore.MettreaJourqtite("Eau", 50);
+    EasyStore.MettreaJourqtite("Eau", 25);
     EasyStore.AfficherProductNom("Eau");
     EasyStore.AfficherInfo();
     Client Aurelien(152, "Aurelien", "LITRA", {});
@@ -22,8 +22,11 @@ int main(){
     EasyStore.AfficherProductNom("Lait");
     EasyStore.AfficherProductNom("Chocolat");
     std::cout << Aurelien;
-    Aurelien.ModifierQtePanier(EasyStore, "Eau",50);
+    Aurelien.ModifierQtePanier(EasyStore, "Eau",6);
     EasyStore.AfficherProductNom("Eau");
     std::cout << Aurelien;
+    Aurelien.SuppProduitPanier(EasyStore, "Eau");
+    std::cout << Aurelien;
+    EasyStore.AfficherProductNom("Eau");
     return 0;
 }
