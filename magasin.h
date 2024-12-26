@@ -15,4 +15,11 @@ class Magasin{
         void AfficherProductALL() const;
         void AfficherProductNom(const std::string& nom);
         void MettreaJourqtite(const std::string& nom, int nouvellequantite);
+
+
+        void AjouterClient(const Client& client);
+        void AfficherClient() const;
+        void AfficherClientNomID(const std::string& nom);
+
+
 };

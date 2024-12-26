@@ -28,5 +28,14 @@ int main(){
     Aurelien.SuppProduitPanier(EasyStore, "Eau");
     std::cout << Aurelien;
     EasyStore.AfficherProductNom("Eau");
+    EasyStore.AfficherInfo();
+    EasyStore.AjouterClient(Aurelien);
+    EasyStore.AfficherClient();
+    std::cout << "test" << std::endl;
+    EasyStore.AfficherClientNomID("LITRA");
+    std::cout << "test 2" << std::endl;
+    EasyStore.AfficherClientNomID("152");
+
+
     return 0;
 }
