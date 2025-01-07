@@ -24,6 +24,7 @@ std::vector<PA> Client::get_PA() const
     return panierAchat_;
 }
 
+
 void Client::AjouterProduitPanier(Magasin& magasin, const std::string& nom, int quantite)
 {
     for (auto& product : magasin.GetProduct()){

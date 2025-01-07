@@ -26,7 +26,6 @@ class Client{
         std::string get_nom() const;
         std::vector<PA> get_PA() const;
 
-        void setquantite(int nouvellequantite);
         void AjouterProduitPanier(Magasin &magasin, const std::string& nom, int quantite);
         void ViderPanier();
         void ModifierQtePanier(Magasin &magasin, const std::string &nom, int nouvellequantite);
