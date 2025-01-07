@@ -1,3 +1,6 @@
+#ifndef PRODUCT_H 
+#define PRODUCT_H
+
 #include <string>
 #include <iostream>
 
@@ -16,3 +19,5 @@ class Product{
         void setquantite(int nouvellequantite);
         friend std::ostream& operator<<(std::ostream& os, const Product& product);
 };
+
+#endif
