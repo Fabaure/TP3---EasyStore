@@ -49,7 +49,8 @@ void Magasin::MettreaJourqtite(const std::string &nom, int nouvellequantite)
 
 
 
-void Magasin::AjouterClient(const Client &client){
+void Magasin::AjouterClient(const Client &client)
+{
     _clients.push_back(client);
 }
 
@@ -69,6 +70,7 @@ void Magasin::AfficherClient() const
 }
 
 
+
 void Magasin::AfficherClientNomID(const std::string &nom)
 {
     int i;
@@ -76,6 +78,33 @@ void Magasin::AfficherClientNomID(const std::string &nom)
     for(const auto& client : _clients){
         if(client.get_nom() == nom || client.get_id() == i){
             std::cout << client;
+        }
+    }
+}
+
+void Magasin::AjouterProductClient(int id, const std::string &produit, int quantite)
+{
+    for(auto& client : _clients){
+        if(client.get_id() == id){
+            client.AjouterProduitPanier(*this, produit, quantite);
+        }
+    }
+}
+
+void Magasin::SuppProductClient(int id, const std::string &produit)
+{
+    for(auto& client : _clients){
+        if(client.get_id() == id){
+            client.SuppProduitPanier(*this, produit);
+        }
+    }
+}
+
+void Magasin::QuantiteProductClient(int id, const std::string &produit, int quantite)
+{
+    for(auto& client : _clients){
+        if(client.get_id() == id){
+            client.ModifierQtePanier(*this, produit, quantite);
         }
     }
 }

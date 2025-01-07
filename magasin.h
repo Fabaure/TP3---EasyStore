@@ -21,5 +21,9 @@ class Magasin{
         void AfficherClient() const;
         void AfficherClientNomID(const std::string& nom);
 
+        void AjouterProductClient(int id, const std::string& produit, int quantite);
+        void SuppProductClient(int id, const std::string& produit);
+        void QuantiteProductClient(int id, const std::string& produit, int quantite);
+
 
 };
