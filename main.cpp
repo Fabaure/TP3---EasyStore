@@ -59,12 +59,14 @@ int main(){
     EasyStore.AfficherProductALL();
 
     Order cmmd1(Aurelien,Aurelien.get_PA(),"En cours");
+    EasyStore.AjouterOrder(cmmd1);
     std::cout << cmmd1;
     EasyStore.ValidationCommande(cmmd1);
     std::cout << cmmd1;
     std::cout << "test2" << std::endl << std::endl;
     EasyStore.AfficherClientNomID("152");
     EasyStore.AfficherProductALL();
+    EasyStore.AfficherOrderALL();
 
 
 
