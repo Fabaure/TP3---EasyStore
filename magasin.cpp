@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 
+
 Magasin::Magasin() : _products(), _clients(), _orders() {}
 
 std::vector<Product>& Magasin::GetProduct()
@@ -107,4 +108,41 @@ void Magasin::QuantiteProductClient(int id, const std::string &produit, int quan
             client.ModifierQtePanier(*this, produit, quantite);
         }
     }
+}
+
+void Magasin::ValidationCommande(Order &order)
+{
+    for(auto& produit : order.GetProduits())
+        for(auto& product : _products){
+            if(product.Get_titre()==produit.nom){
+                if(product.Get_quantite_dispo()<produit.quantite){
+                    order.SetStatut("Pas validee");
+                    order.GetClient().get_PA().clear();
+                    return;
+                }
+            MettreaJourqtite(produit.nom,product.Get_quantite_dispo()-produit.quantite);
+            }
+        }
+    for(auto& client : _clients){
+        if(client.get_nom() == order.GetClient().get_nom()){
+            client.ViderPanier();
+        }
+    }
+    order.SetStatut("Validee");
+
+}
+
+void Magasin::AfficherOrder(const Order &order)
+{
+    if(_orders.empty()){
+        std::cout << "Il n'y a pas de commmande dans le magasin" << std::endl;
+    }
+    for(const auto& order: _orders){
+         std::cout << order;
+    }
+}
+
+void Magasin::AjouterOrder(const Order &order)
+{
+    _orders.push_back(order);
 }
