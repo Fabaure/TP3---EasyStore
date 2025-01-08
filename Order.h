@@ -11,14 +11,12 @@ private:
     
 
 public:
-    Order(const Client& client, const std::vector<PA>& produits, const std::string& statut = "En cours");
-
+    Order(const Client& client, const std::vector<PA>& produits, const std::string& statut);
     const Client& GetClient() const;
     const std::vector<PA>& GetProduits() const;
     const std::string& GetStatut() const;
 
     void SetStatut(const std::string& statut);
-
-    void AfficherCommande() const;         
+       
     friend std::ostream& operator<<(std::ostream& os, const Order& commande);
 };

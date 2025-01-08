@@ -23,24 +23,14 @@ void Order::SetStatut(const std::string &statut)
     statut_=statut;
 }
 
-void Order::AfficherCommande() const
-{
-    std::cout << "Commande pour le client : " << client_.get_prenom() << " " << client_.get_nom() << "\n";
-    std::cout << "Statut : " << statut_ << "\n";
-    std::cout << "Produits achetés : \n";
-    for (const auto& produit : produits_) {
-        std::cout << "- Nom : " << produit.nom << ", Quantité : " << produit.quantite << "\n";
-    }
-    std::cout << std::endl;
-}
 
 std::ostream &operator<<(std::ostream &os, const Order &commande)
 {
      os << "Commande du client : " << commande.client_.get_prenom() << " " << commande.client_.get_nom() << "\n"
         << "Statut : " << commande.statut_ << "\n"
-        << "Produits achetés : \n";
+        << "Produits achetes : \n";
     for (const auto& produit : commande.produits_) {
-        os << "- Nom : " << produit.nom << ", Quantité : " << produit.quantite << "\n";
+        os << "- Nom : " << produit.nom << ", Quantite : " << produit.quantite << "\n";
     }
     return os;
 }
