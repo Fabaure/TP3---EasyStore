@@ -18,9 +18,9 @@ const std::string& Order::GetStatut() const
     return statut_;
 }
 
-void Order::SetStatut(const std::string &statut)
+void Order::SetStatut(std::string statut)
 {
-    statut_=statut;
+    statut_ = statut;
 }
 
 

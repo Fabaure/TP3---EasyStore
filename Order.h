@@ -16,7 +16,7 @@ public:
     const std::vector<PA>& GetProduits() const;
     const std::string& GetStatut() const;
 
-    void SetStatut(const std::string& statut);
+    void SetStatut(std::string statut);
        
     friend std::ostream& operator<<(std::ostream& os, const Order& commande);
 };
