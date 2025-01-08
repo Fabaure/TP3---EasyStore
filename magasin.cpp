@@ -132,7 +132,7 @@ void Magasin::ValidationCommande(Order &order)
 
 }
 
-void Magasin::AfficherOrder(const Order &order)
+void Magasin::AfficherOrderALL()
 {
     if(_orders.empty()){
         std::cout << "Il n'y a pas de commmande dans le magasin" << std::endl;

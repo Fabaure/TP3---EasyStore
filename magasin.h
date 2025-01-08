@@ -26,7 +26,7 @@ class Magasin{
         void QuantiteProductClient(int id, const std::string& produit, int quantite);
 
         void ValidationCommande(Order& order);
-        void AfficherOrder(const Order& order);
+        void AfficherOrderALL();
         void AjouterOrder(const Order& order);
 
 };
